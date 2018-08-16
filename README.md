@@ -71,6 +71,10 @@ This app example to iOS, have advanced features like:
     - Support for battery powered devices
       (this mobile app gets status of this)
 
+    - Fast connection
+      If not connected yet, do scan and connects a device with strong signal (more close)
+      Else, do scan and if located the last device, connect with it (no wait until end of scan)
+      
     - Periodic feedback sends, to know if device is ok and to avoid it to enter in standby by inactivity
     
     - General utilities to use
