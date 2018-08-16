@@ -51,9 +51,9 @@ BLE is a Bluetooth Low Energy:
 
 # Part II - iOS app 
 
-This mobile app for iOS >= 10.3
-All code is written in Swift
-No third part libraries is used
+    This mobile app for iOS >= 10.3
+    All code is written in Swift
+    No third part libraries is used
 
 ## Features
 
