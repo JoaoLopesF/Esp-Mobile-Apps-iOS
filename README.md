@@ -204,6 +204,7 @@ Please give a star to this repo, if you like this.
 
 ## To-do
 
+* See some Xcode warnings
 * Documentation (doxygen)
 * Tutorial (guide)
 * To try auto reconnection in case of device disconnected
