@@ -103,7 +103,7 @@ Example:
     * -----------------------------
     * Messages codes:
     * 01 Initial
-    * 10 Energy status(USB or Battery?)
+    * 10 Energy status(External or Battery?)
     * 11 Informations about ESP32 device
     * 70 Echo debug
     * 80 Feedback
@@ -149,7 +149,7 @@ Modules of ios example aplication
         - Util                  - General utilities routines
         - WiFi                  - To WiFi (as get SSID)
 
-    -Views                      - UI of this app
+    - Views                     - UI of this app
                                     Note: have a template in main storyboard
     
 Generally you do not need to change anything in the util directory. 
@@ -159,7 +159,7 @@ But yes in the other files, to facilitate, I put a comment "// TODO: see it" in 
 
 ## EspApp
 
-This app consists of following screen:
+This app consists of following screens:
 
     - Connection (Connecting): when connecting a ESP32 device by BLE
     - MainMenu (EspAPP): Main menu of app
@@ -167,13 +167,13 @@ This app consists of following screen:
       status of battery (if enabled)
     - Terminal BLE: See or send messages BLE
     - Settings: settings of app (disabled by default)
-    - Disconnected: when a disconnect has benn detected
+    - Disconnected: when a disconnect has been detected
 
 For it each on have a viewcontroller
 
-And for main processing and ble stuff have a MainControlller
+And for main processing and BLE stuff have a MainControlller
 
-Have a templates to make a new ones (for example: the settings)
+Have a templates to make a new ones (for example: for the settings)
 
 See screenshots below
 
@@ -206,14 +206,14 @@ Please give a star to this repo, if you like this.
 
 * Documentation (doxygen)
 * Tutorial (guide)
-* Auto reconnection
+* To try auto reconnection in case of device disconnected
 * Revision of translate to english (typing errors or mistranslated)
 
 ## Researchs used 
 
-* Nordic github samples repos (very good) 
-* Adafruit (based on Nordic codes)
-* StackOverFlow for doubts or problems (https://stackoverflow.com)
+* Nordic github samples repos (very good) - https://github.com/NordicSemiconductor
+* Adafruit (based on Nordic codes) - https://github.com/adafruit/Bluefruit_LE_Connect 
+* StackOverFlow for iOS doubts or problems - https://stackoverflow.com
 
 ## Release History
 
