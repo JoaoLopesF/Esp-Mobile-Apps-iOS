@@ -4,8 +4,9 @@
  * Module    : MainController - main controller and main code in app
  * Comments  : Uses a singleton pattern to share instance to all app
  * Versions  :
- * -------   --------     -------------------------
- * 0.1.0     08/08/18     First version
+ * -------  --------    -------------------------
+ * 0.1.0    08/08/18    First version
+ * 0.1.1    17.08.18    Adjusts in send repeat echoes
  **/
 
 /*
@@ -233,7 +234,15 @@ public class MainController: NSObject, BLEDelegate {
                 
                 // Show a debug with the total per second
                 
-                bleAddDebug(type: "O", message: "*** Total of repeats(send/receive) p/sec.: \(terminalBLEVC.bleTotRepeatPSec)", extra: "", forced: true)
+                if terminalBLEVC.bleTotRepeatPSec > 0 {
+                    
+                    bleAddDebug(type: "O", message: "*** Total of repeats(send/receive) p/sec.: \(terminalBLEVC.bleTotRepeatPSec)", extra: "", forced: true)
+
+                } else { // Send again, if no responses received
+                    
+                    terminalBLEVC.send(repeated: true)
+                    
+                }
                 
                 // Clear the total
                 

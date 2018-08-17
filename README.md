@@ -254,6 +254,10 @@ Please give a star to this repo, if you like this.
 
     ![Terminal](https://i.imgur.com/SC3t9FW.png)
 
+        Notes:  
+            - See large info message receive with size of 207 bytes
+            - See messages ends with [], the app translate codes to extra debug
+
 * Disconnected: 
 
     - When a disconnect has benn detected
