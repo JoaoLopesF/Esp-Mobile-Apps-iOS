@@ -63,7 +63,7 @@ This app example to iOS, have advanced features like:
       (if necessary, automatically send / receive in small pieces)
 
     - Modular and advanced programming
-    - Based in mature code (I have ESP32 and mobile apps, since years ago)
+    - Based in mature code (I have used in Bluetooth devices and mobile apps, since years ago)
 
     - Stand-by support for ESP32 deep-sleep
       (by a button, or by inativity time, no touchpad yet)
