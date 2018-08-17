@@ -22,6 +22,8 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
 
     public var bleTotRepeatPSec: Int = 0    // Total of repeat (send/receive echo) per second
 
+    private var savedDebugLevel: debugLevel = debugLevelCurrent
+    
     ////// Outlets
     
     @IBOutlet weak var tableViewDebug: UITableView!
@@ -319,23 +321,35 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
         
         if repeated {
             
-            repeatSend = true
-            
-            buttonRepeat.setTitle("Stop", for: .normal)
-            
-            extShowToast(message: "Repeated sends now")
-            
-            textViewSend.isHidden = true
-            buttonSend.isHidden = true
-
-            mainController.bleDebugEnabled = false  // Disable it, for send repeated
-                                                    // Due App can crash on stop this
-                                                    // And for optimizations
-                                                    // To see debug of this messages, please see the output log in XCode or in monitor serial
-
+            startRepeats()
         }
     }
     
+    // Start repeats
+    
+    func startRepeats() {
+    
+        repeatSend = true
+        
+        buttonRepeat.setTitle("Stop", for: .normal)
+        
+        extShowToast(message: "Repeated sends now")
+        
+        textViewSend.isHidden = true
+        buttonSend.isHidden = true
+        
+        mainController.bleDebugEnabled = false  // Disable it, for send repeated
+        // Due App can crash on stop this
+        // And for optimizations
+        // To see debug of this messages, please see the output log in XCode or in monitor serial
+        
+        // No debug during tests to improve performance
+        
+        savedDebugLevel = debugLevelCurrent // Save it
+        
+        debugSetLevel(.none)
+        
+    }
     // Stop repeats
     
     func stopRepeat() {
@@ -347,6 +361,8 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
         
         mainController.bleDebugEnabled = true // Enable it
         
+        debugSetLevel(savedDebugLevel) // Enable it
+
         repeatSend = false
         bleTotRepeatPSec = 0
         

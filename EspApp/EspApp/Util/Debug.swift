@@ -4,8 +4,9 @@
  * Module    : Util - iOS UI utilities
  * Comments  : Routines For improve debug messages
  * Versions  :
- * -------   --------     -------------------------
- * 0.1.0     08/08/18     First version
+ * -------  --------    -------------------------
+ * 0.1.0    08/08/18    First version
+ * 0.1.1    17/08/18    Add none and info levels
  **/
  
 import Foundation
@@ -14,23 +15,26 @@ import Foundation
 
 enum debugLevel: Int8 {
     
-    case verbose = 0
-    case debug = 1
-    case warning = 2
-    case error = 3
+    case verbose = 1
+    case debug = 2
+    case info = 3
+    case warning = 4
+    case error = 5
     case any = 9
-    
+    case none = 99
+
 }
 
 #if DEBUG // Debug environment
     
     // Current debug level setted
     
-    private var debugLevelCurrent:debugLevel = debugLevel.debug
+    private (set) var debugLevelCurrent:debugLevel = debugLevel.debug
     
     // Set the actual level
     
-    @inline(__always) func debugSetLevel(_ level:debugLevel) {
+    @inline(__always)
+    func debugSetLevel(_ level:debugLevel) {
         
         if level == .any {
             debugE("Current level can not by Any!")
@@ -43,25 +47,31 @@ enum debugLevel: Int8 {
 
     // For show debug level
     
-    @inline(__always) func debugShowLevel (_ level: debugLevel) -> String {
+    @inline(__always)
+    func debugShowLevel (_ level: debugLevel) -> String {
         
         switch level {
         case .verbose:
             return "📘V-Verbose"
         case .debug:
             return "📗D-Debug"
+        case .info:
+            return "📔I-Info"
         case .warning:
-           return "📒W-Warning"
+            return "📒W-Warning"
         case .error:
             return "📕E-Error"
         case .any:
             return "📙A-Any"
+        case .none:
+            return "🚫N-None"
         }
     }
     
     // Verbose
     
-@inline(__always) func debugV(_ items: Any..., file: String = #file, function: String = #function) {
+    @inline(__always)
+    func debugV(_ items: Any..., file: String = #file, function: String = #function) {
         if debugLevelCurrent.rawValue <= debugLevel.verbose.rawValue {
             debug(nivel: debugLevel.verbose, items: items, file: file, function: function)
         }
@@ -69,15 +79,26 @@ enum debugLevel: Int8 {
     
     // Debug
     
-@inline(__always) func debugD(_ items: Any..., file: String = #file, function: String = #function) {
+    @inline(__always)
+    func debugD(_ items: Any..., file: String = #file, function: String = #function) {
         if debugLevelCurrent.rawValue <= debugLevel.debug.rawValue {
             debug(nivel: debugLevel.debug, items: items, file: file, function: function)
         }
     }
-    
+
+    // Info
+
+    @inline(__always)
+    func debugI(_ items: Any..., file: String = #file, function: String = #function) {
+    if debugLevelCurrent.rawValue <= debugLevel.info.rawValue {
+        debug(nivel: debugLevel.debug, items: items, file: file, function: function)
+    }
+}
+
     // Warning
     
-@inline(__always) func debugW(_ items: Any..., file: String = #file, function: String = #function) {
+    @inline(__always)
+    func debugW(_ items: Any..., file: String = #file, function: String = #function) {
         if debugLevelCurrent.rawValue <= debugLevel.warning.rawValue {
             debug(nivel: debugLevel.warning, items: items, file: file, function: function)
         }
@@ -85,7 +106,8 @@ enum debugLevel: Int8 {
     
     // Error
     
-@inline(__always) func debugE(_ items: Any..., file: String = #file, function: String = #function) {
+    @inline(__always)
+    func debugE(_ items: Any..., file: String = #file, function: String = #function) {
         if debugLevelCurrent.rawValue <= debugLevel.error.rawValue {
             debug(nivel: debugLevel.error, items: items, file: file, function: function)
         }
@@ -93,13 +115,15 @@ enum debugLevel: Int8 {
 
     // Any - always show
     
-@inline(__always) func debugA(_ items: Any..., file: String = #file, function: String = #function) {
+    @inline(__always)
+    func debugA(_ items: Any..., file: String = #file, function: String = #function) {
         debug(nivel: debugLevel.any, items: items, file: file, function: function)
     }
 
     // Show debug
     
-@inline(__always) fileprivate func debug(nivel:debugLevel, items:[Any], file:String, function: String) {
+    @inline(__always)
+    fileprivate func debug(nivel:debugLevel, items:[Any], file:String, function: String) {
         
         // Print info
         
@@ -125,12 +149,16 @@ enum debugLevel: Int8 {
             info.append("📘V")
         case .debug:
             info.append("📗D")
+        case .info:
+            info.append("📔I")
         case .warning:
             info.append("📒W")
         case .error:
             info.append("📕E")
         case .any:
             info.append("📙A")
+        default:
+            break
         }
         
         info.append(" \(file).\(function): ")

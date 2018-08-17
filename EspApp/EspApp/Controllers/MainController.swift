@@ -7,6 +7,7 @@
  * -------  --------    -------------------------
  * 0.1.0    08/08/18    First version
  * 0.1.1    17.08.18    Adjusts in send repeat echoes
+ * 0.1.2    17/08/18    Adjusts in Terminal BLE and DEbug
  **/
 
 /*
