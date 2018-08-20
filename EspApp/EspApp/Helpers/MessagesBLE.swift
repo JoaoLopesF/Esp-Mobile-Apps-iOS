@@ -4,8 +4,9 @@
  * Module    : MessagesBle - static class helper to messages
  * Comments  :
  * Versions  :
- * -------   --------     -------------------------
- * 0.1.0     08/08/18     First version
+ * -------  --------    -------------------------
+ * 0.1.0    08/08/18    First version
+ * 0.2.0    20/08/18    Option to disable logging br BLE (used during repeated sends)
  **/
 
 /**
@@ -39,6 +40,7 @@ public class MessagesBLE {
     public static let CODE_INFO:Int = 11
     public static let CODE_ECHO:Int = 70
     public static let CODE_FEEDBACK:Int = 80
+    public static let CODE_LOGGING:Int = 81
     public static let CODE_RESTART:Int = 98
     public static let CODE_STANDBY:Int = 99
     
@@ -49,6 +51,7 @@ public class MessagesBLE {
     public static let MESSAGE_ENERGY:String = "\(String(format: "%02d",CODE_ENERGY)):"
     public static let MESSAGE_INFO:String = "\(String(format: "%02d",CODE_INFO)):"
     public static let MESSAGE_FEEDBACK:String = "\(String(format: "%02d",CODE_FEEDBACK)):"
+    public static let MESSAGE_LOGGING:String = "\(String(format: "%02d",CODE_LOGGING)):"
     public static let MESSAGE_RESTART:String = "\(String(format: "%02d",CODE_RESTART)):"
     public static let MESSAGE_STANDBY:String = "\(String(format: "%02d",CODE_STANDBY)):"
     

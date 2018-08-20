@@ -4,8 +4,9 @@
  * Module    : TerminalBLEViewController - VC Terminal BLE
  * Comments  :
  * Versions  :
- * -------   --------     -------------------------
- * 0.1.0     08/08/18     First version
+ * -------  --------    -------------------------
+ * 0.1.0    08/08/18    First version
+ * 0.2.0    20/08/18    Option to disable logging br BLE (used during repeated sends)
  **/
 
 import UIKit
@@ -343,6 +344,10 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
         // And for optimizations
         // To see debug of this messages, please see the output log in XCode or in monitor serial
         
+        // Deactivate logging on ESP32 to better performance
+        
+        mainController.bleSendMessage("\(MessagesBLE.MESSAGE_LOGGING)N", debugExtra: "by terminal")
+        
         // No debug during tests to improve performance
         
         savedDebugLevel = debugLevelCurrent // Save it
@@ -362,6 +367,8 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
         mainController.bleDebugEnabled = true // Enable it
         
         debugSetLevel(savedDebugLevel) // Enable it
+        
+        mainController.bleSendMessage("\(MessagesBLE.MESSAGE_LOGGING)R", debugExtra: "by terminal") // Restore it
 
         repeatSend = false
         bleTotRepeatPSec = 0

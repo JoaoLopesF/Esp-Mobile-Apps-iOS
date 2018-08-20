@@ -7,7 +7,8 @@
  * -------  --------    -------------------------
  * 0.1.0    08/08/18    First version
  * 0.1.1    17.08.18    Adjusts in send repeat echoes
- * 0.1.2    17/08/18    Adjusts in Terminal BLE and DEbug
+ * 0.1.2    17/08/18    Adjusts in Terminal BLE and Debug
+ * 0.2.0    20/08/18    Option to disable logging br BLE (used during repeated sends)
  **/
 
 /*
