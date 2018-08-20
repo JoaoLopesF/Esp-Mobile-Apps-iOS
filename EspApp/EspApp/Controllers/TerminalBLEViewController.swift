@@ -106,6 +106,12 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
         self.tableViewDebug.rowHeight = UITableViewAutomaticDimension
         self.tableViewDebug.estimatedRowHeight = 44
         
+        // Default send text
+        
+        if textViewSend.text?.count == 0 {
+            textViewSend.text = "\(MessagesBLE.MESSAGE_ECHO)Echo test"
+        }
+        
         // Automatically hide keyboard on out tap
         
         extHideKeyboard()
