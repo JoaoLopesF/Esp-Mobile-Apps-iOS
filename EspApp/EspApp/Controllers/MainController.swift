@@ -1,5 +1,5 @@
 /* ***********
- * Project   : Esp-Idf-App-Mobile-iOS - App to connect a Esp32 device by BLE
+ * Project   : Esp-App-Mobile-iOS - App to connect a Esp32 device by BLE
  * Programmer: Joao Lopes
  * Module    : MainController - main controller and main code in app
  * Comments  : Uses a singleton pattern to share instance to all app
@@ -9,6 +9,8 @@
  * 0.1.1    17.08.18    Adjusts in send repeat echoes
  * 0.1.2    17/08/18    Adjusts in Terminal BLE and Debug
  * 0.2.0    20/08/18    Option to disable logging br BLE (used during repeated sends)
+ * 0.3.0    23/08/18    Changed name of github repos to Esp-App-Mobile-Apps-*
+ *                      Few adjustments
  **/
 
 /*
@@ -54,7 +56,7 @@ public class MainController: NSObject, BLEDelegate {
     
     ///// Variables
     
-    public let versionApp:String = "0.1.0" // Version of this APP
+    public let versionApp:String = "0.3.0" // Version of this APP
     
     private (set) var versionDevice: String = "?" // Version of BLE device
     
@@ -505,7 +507,7 @@ func showVCDisconnected (message: String) {
         // Debug
         
         if AppSettings.TERMINAL_BLE && self.bleDebugEnabled { // App have a Terminal BLE (debug) and it is enabled ?
-            self.bleAddDebug(type: "O",  message: "AbortingConnection: \(message)") // Add debug
+            self.bleAddDebug(type: "O",  message: "Connection aborted: \(message)") // Add debug
         }
 
         // Shom message on disconnected VC
@@ -667,7 +669,7 @@ func showVCDisconnected (message: String) {
                 bleUpdateDebug(extra: "Info")
             }
             
-            debugV("Messagem of info")
+            debugV("Message of info")
             
             bleProcessInfo(fields: fields)
             
@@ -899,7 +901,7 @@ func showVCDisconnected (message: String) {
         
         DispatchQueue.main.async {
 
-            // Process information br type
+            // Process information by type
             
             switch type {
                 
@@ -1048,7 +1050,7 @@ func showVCDisconnected (message: String) {
         }
         
         if AppSettings.TERMINAL_BLE && self.bleDebugEnabled { // App have a Terminal BLE (debug) and it is enabled ?
-            bleAddDebug(type: "F",  message: message) // Add debug
+            bleAddDebug(type: "C",  message: message) // Add debug
         }
 
 #endif

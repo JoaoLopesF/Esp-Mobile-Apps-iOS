@@ -1,5 +1,5 @@
 /* ***********
- * Project   : Esp-Idf-App-Mobile-iOS - App to connect a Esp32 device by BLE
+ * Project   : Esp-App-Mobile-iOS - App to connect a Esp32 device by BLE
  * Programmer: Joao Lopes
  * Module    : TerminalBLEViewController - VC Terminal BLE
  * Comments  :
@@ -29,7 +29,6 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var tableViewDebug: UITableView!
     
-    @IBOutlet weak var labelTypeFinded: UILabel!
     @IBOutlet weak var labelTypeConn: UILabel!
     @IBOutlet weak var labelTypeDisconn: UILabel!
     @IBOutlet weak var labelTypeRecv: UILabel!
@@ -40,7 +39,6 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var buttonRepeat: UIButton!
     
     @IBOutlet weak var buttonSend: UIButton!
-    @IBOutlet weak var buttonRefresh: UIButton!
     @IBOutlet weak var labelStatus: UILabel!
     @IBOutlet weak var imageViewBattery: UIImageView!
     @IBOutlet weak var labelPercentBattery: UILabel!
@@ -190,8 +188,6 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
         cell.labelDebug.text = debug
         
         switch item.type {
-        case "F": // Find
-            cell.labelDebug.textColor = labelTypeFinded.textColor
         case "C": // Connection
             cell.labelDebug.textColor = labelTypeConn.textColor
         case "D": // Disconnection

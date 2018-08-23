@@ -1,5 +1,5 @@
 /* ***********
- * Project   : Esp-Idf-App-Mobile-iOS - App to connect a Esp32 device by BLE
+ * Project   : Esp-App-Mobile-iOS - App to connect a Esp32 device by BLE
  * Programmer: Joao Lopes
  * Module    : InformationsViewController - VC to show ESP32 device infomartions
  * Comments  :

@@ -1,5 +1,5 @@
 /* ***********
- * Project   : Esp-Idf-App-Mobile-iOS - App to connect a Esp32 device by BLE
+ * Project   : Esp-App-Mobile-iOS - App to connect a Esp32 device by BLE
  * Programmer: Joao Lopes
  * Module    : Settings - A helper class to settings
  * Comments  : Put here settings for app - can be imuttable (let) or muttable (var)

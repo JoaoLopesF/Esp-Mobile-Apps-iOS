@@ -1,6 +1,6 @@
 
 /* ***********
- * Project   : Esp-Idf-App-Mobile-iOS - App to connect a Esp32 device by BLE
+ * Project   : Esp-App-Mobile-iOS - App to connect a Esp32 device by BLE
  * Programmer: Joao Lopes
  * Module    : AppDelegate - iOS AppDelegate
  * Comments  :

@@ -1,7 +1,7 @@
 /* ***********
- * Project   : Esp-Idf-App-Mobile-iOS - App to connect a Esp32 device by BLE
+ * Project   : Esp-App-Mobile-iOS - App to connect a Esp32 device by BLE
  * Programmer: Joao Lopes
- * Module    : MessagesBle - static class helper to messages
+ * Module    : MessagesBLE - static class helper to messages
  * Comments  :
  * Versions  :
  * -------  --------    -------------------------
@@ -35,8 +35,8 @@ public class MessagesBLE {
     
     // Messages code
     
-    public static let CODE_OK:Int =         00
-    public static let CODE_INITIAL:Int =    01
+    public static let CODE_OK:Int =          0
+    public static let CODE_INITIAL:Int =     1
     public static let CODE_ENERGY:Int =     10
     public static let CODE_INFO:Int =       11
     public static let CODE_ECHO:Int =       70

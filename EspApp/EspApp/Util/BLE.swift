@@ -1,8 +1,8 @@
 /* ***********
- * Project   : Esp-Idf-App-Mobile-iOS - App to connect a Esp32 device by BLE
+ * Project   : Esp-App-Mobile-iOS - App to connect a Esp32 device by BLE
  * Programmer: Joao Lopes
  * Module    : Util - BLE
- * Comments  : Based in codes of Adafruit
+ * Comments  : Based in codes of Adafruit (Nordic based) - https://github.com/adafruit/Bluefruit_LE_Connect
  * Versions  :
  * -------   --------     -------------------------
  * 0.1.0     08/08/18     First version

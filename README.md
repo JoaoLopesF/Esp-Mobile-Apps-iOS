@@ -1,16 +1,16 @@
-# Esp-Idf-Mobile-Apps-iOS
-Esp-Idf-Mobile-Apps is a set of examples apps to start making Esp32 BLE devices connected to mobile applications (Android and iOS)
+# Esp-Mobile-Apps-iOS
+Esp-Mobile-Apps is a set of examples apps to start making Esp32 BLE devices connected to mobile applications (Android and iOS)
 
 I have prepared a set of applications, to serve as a basis,
 for those who need to make ble connected mobile projects with the ESP32.
 
-* Part I    - __Esp-IDF app__ - Esp32 firmware example  - https://github.com/JoaoLopesF/Esp-Idf-Mobile-Apps-Esp32
+* Part I    - __ESP-IDF app__ - Esp32 firmware example  - https://github.com/JoaoLopesF/Esp-Mobile-Apps-Esp32
 * Part II   - __iOS app__ - mobile app example          - this github repo
 * Part III  - __Android app__ - mobile app example      - soon, prevision -> 30-Aug-2018
 
 It is a advanced, but simple (ready to go), fully functional set of applications.
 
-![Esp-Idf-Mobile-App](https://i.imgur.com/MuR7gna.png)
+![Esp-Mobile-App](https://i.imgur.com/MuR7gna.png)
 
 ## Contents
 
@@ -33,7 +33,7 @@ It is a advanced, but simple (ready to go), fully functional set of applications
 The Esp32 is a powerful board with 2 cores, 520K RAM, 34 GPIO, 3 UART,
 Wifi and Bluetooth Dual Mode. And all this at an excellent price.
 
-Esp-IDF is very good SDK, to developer Esp32 projects.
+ESP-IDF is very good SDK, to developer Esp32 projects.
 With Free-RTOS (with multicore), WiFi, BLE, plenty of GPIOs, peripherals support, etc.
 
 ## BLE
