@@ -182,7 +182,7 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
         if item.type == "R" || item.type == "S" {
             debug = "\(item.time): \(item.type)[\(item.message.count)]: \(item.message) [\(item.extra)]"
         } else {
-            debug = "\(item.time): \(item.type): \(item.message) \(item.extra)"
+            debug = "\(item.time): \(item.type): \(item.message) [\(item.extra)]"
         }
         
         cell.labelDebug.text = debug
