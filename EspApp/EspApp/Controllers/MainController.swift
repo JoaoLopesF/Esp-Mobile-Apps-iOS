@@ -240,7 +240,7 @@ public class MainController: NSObject, BLEDelegate {
                 
                 if terminalBLEVC.bleTotRepeatPSec > 0 {
                     
-                    bleAddDebug(type: "O", message: "*** Total of repeats(send/receive) p/sec.: \(terminalBLEVC.bleTotRepeatPSec)", extra: "", forced: true)
+                    bleAddDebug(type: "O", message: "*** Repeats(send/receive) p/sec.: \(terminalBLEVC.bleTotRepeatPSec)", extra: "", forced: true)
 
                 } else { // Send again, if no responses received
                     

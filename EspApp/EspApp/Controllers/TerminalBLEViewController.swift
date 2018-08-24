@@ -304,15 +304,15 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
             return
         }
         
-        // Hide keyboard
+        // TODO: see if need hide keyboard
         
-        extDismissKeyboard()
+        //extDismissKeyboard()
         
         // For repeat -> only type echo messages allowed
         
-        if repeated && !content.starts(with: "70:") {
+        if repeated && !content.starts(with: MessagesBLE.MESSAGE_ECHO) {
             
-            extShowToast(message: "For repeat, only echo is allowed (70:)")
+            extShowToast(message: "For repeat, only echo is allowed (\(MessagesBLE.MESSAGE_ECHO)")
             return
         }
     
@@ -322,7 +322,7 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
 
         // Repeated
         
-        if repeated {
+        if repeated && !repeatSend {
             
             startRepeats()
         }
@@ -341,13 +341,10 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
         textViewSend.isHidden = true
         buttonSend.isHidden = true
         
+        // Deactivate debugs on App and ESP32 to better performance
+
         mainController.bleDebugEnabled = false  // Disable it, for send repeated
-        // Due App can crash on stop this
-        // And for optimizations
-        // To see debug of this messages, please see the output log in XCode or in monitor serial
-        
-        // Deactivate logging on ESP32 to better performance
-        
+
         mainController.bleSendMessage("\(MessagesBLE.MESSAGE_LOGGING)N", debugExtra: "by terminal")
         
         // No debug during tests to improve performance
@@ -366,12 +363,16 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
         textViewSend.isHidden = false
         buttonSend.isHidden = false
         
+        // Restore debugs
+        
         mainController.bleDebugEnabled = true // Enable it
         
         debugSetLevel(savedDebugLevel) // Enable it
         
         mainController.bleSendMessage("\(MessagesBLE.MESSAGE_LOGGING)R", debugExtra: "by terminal") // Restore it
 
+        // Indicate to no repeat
+        
         repeatSend = false
         bleTotRepeatPSec = 0
         
