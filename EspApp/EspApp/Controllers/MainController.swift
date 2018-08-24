@@ -11,6 +11,7 @@
  * 0.2.0    20/08/18    Option to disable logging br BLE (used during repeated sends)
  * 0.3.0    23/08/18    Changed name of github repos to Esp-App-Mobile-Apps-*
  *                      Few adjustments
+ * 0.3.1    24/08/18    Alert for BLE device low battery
  **/
 
 /*
@@ -56,7 +57,7 @@ public class MainController: NSObject, BLEDelegate {
     
     ///// Variables
     
-    public let versionApp:String = "0.3.0" // Version of this APP
+    public let versionApp:String = "0.3.1" // Version of this APP
     
     private (set) var versionDevice: String = "?" // Version of BLE device
     
@@ -784,6 +785,8 @@ func showVCDisconnected (message: String) {
         
         // Voltage readed from ADC
         
+        let oldVoltage = voltageBattery
+        
         voltageBattery = Util.round((Float(readADCBattery) * factorCaliber), 2)
         
         debugV("vbat ->", voltageBattery, "v")
@@ -874,6 +877,16 @@ func showVCDisconnected (message: String) {
         
         showStatusBattery()
         
+        // Battery low ?
+        
+        let low: Float = 3.1 // Experimental // TODO do setting
+
+        if voltageBattery <= low &&
+            (oldVoltage == 0.0 || oldVoltage > low) {
+        
+            Alert.alert("Attention: low battery on BLE device!", viewController: UtilUI.getRootViewController()!)
+        }
+
     }
 
     // Process info messages

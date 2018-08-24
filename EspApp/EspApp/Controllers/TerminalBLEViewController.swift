@@ -304,9 +304,9 @@ class TerminalBLEViewController: UIViewController, UITableViewDataSource, UITabl
             return
         }
         
-        // TODO: see if need hide keyboard
+        // Hide keyboard
         
-        //extDismissKeyboard()
+        extDismissKeyboard()
         
         // For repeat -> only type echo messages allowed
         

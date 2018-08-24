@@ -14,6 +14,14 @@ import UIKit
 
 class UtilUI {
 
+    // Get Root ViewController
+    
+    class func getRootViewController() -> UIViewController? {
+        
+        return UIApplication.shared.keyWindow!.rootViewController
+
+    }
+
     // Set background of Table View as a gradient - (based em https://stackoverflow.com/questions/30018035/set-gradient-behind-uitableview)
     
     class func setTableViewBackgroundGradient(sender: UITableViewController, _ topColor:UIColor, _ bottomColor:UIColor) {
