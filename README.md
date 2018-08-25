@@ -5,8 +5,8 @@ I have prepared a set of applications, to serve as a basis,
 for those who need to make ble connected mobile projects with the ESP32.
 
 * Part I    - __ESP-IDF app__ - Esp32 firmware example  - https://github.com/JoaoLopesF/Esp-Mobile-Apps-Esp32
-* Part II   - __iOS app__ - mobile app example          - this github repo
-* Part III  - __Android app__ - mobile app example      - soon, prevision -> 30-Aug-2018
+* Part II   - __Android app__ - mobile app example      - https://github.com/JoaoLopesF/Esp-Mobile-Apps-Android
+* Part III  - __iOS app__     - mobile app example      - this github repo
 
 It is a advanced, but simple (ready to go), fully functional set of applications.
 
@@ -16,7 +16,7 @@ It is a advanced, but simple (ready to go), fully functional set of applications
 
  - [Esp32](#esp32)
  - [BLE](#ble)
- - [Part II - iOS app](#part-ii---ios-app)
+ - [Part III - iOS app](#part-iii---ios-app)
  - [Features](#features)
  - [BLE messages](#blemessages)
  - [Structure](#structure)
@@ -44,12 +44,12 @@ devices with Bluetooth connection for mobile applications.
 BLE is a Bluetooth Low Energy:
 
     BLE is suitable for connection to Android and iOS.
-    Nearly 100% of devices run Android >= 4.0.3, and most of them should have BLE.
+    Nearly 100% of devices run Android >= 4.3, and most of them should have BLE.
     For iOS, we have support for BLE, and for normal Bluetooth, only some modules with Mfi certification (made for i ...)
 
     So BLE is the most viable alternative for Esp32 to communicate with mobile devices.
 
-# Part II - iOS app 
+# Part III - iOS app 
 
     This mobile app for iOS >= 10.3
     All code is written in Swift
@@ -125,6 +125,7 @@ I suggest you use a FreeRTOS task to agregate data after send.
 
 Modules of ios example aplication
 
+```
  - EspApp                   - The iOS application
     
     - Assets.xcassets           - Images
@@ -151,6 +152,7 @@ Modules of ios example aplication
 
     - Views                     - UI of this app
                                     Note: have a template in main storyboard
+```
     
 Generally you do not need to change anything in the util directory. 
 If you need, please add a Issue or a commit, to put it in repo, to help a upgrades in util
@@ -217,6 +219,13 @@ Please give a star to this repo, if you like this.
 * StackOverFlow for iOS doubts or problems - https://stackoverflow.com
 
 ## Release History
+
+* 0.3.1 - 24/08/18 
+    * Show alert for BLE device low battery
+
+* 0.3.0   23/08/18    
+    * Changed name of github repos to Esp-App-Mobile-Apps-*
+    * Few adjustments
 
 * 0.2.0 - 20/08/18
     * Option to disable logging br BLE (used during repeated sends)

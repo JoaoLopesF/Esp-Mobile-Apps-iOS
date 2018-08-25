@@ -14,7 +14,7 @@ import UIKit
 
 class UtilUI {
 
-    // Get Root ViewController
+    // Get Root ViewController - based on https://stackoverflow.com/questions/12418177/how-to-get-root-view-controller
     
     class func getRootViewController() -> UIViewController? {
         
