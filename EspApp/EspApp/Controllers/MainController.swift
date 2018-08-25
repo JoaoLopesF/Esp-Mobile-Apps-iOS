@@ -826,7 +826,7 @@ func showVCDisconnected (message: String) {
             
             if poweredExternal && chargingBattery { // Charging by USB or external
                 
-                imageBattery = #imageLiteral(resourceName: "battery7")
+                imageBattery = #imageLiteral(resourceName: "charging")
 
                 statusBattery += "|Chg"
 

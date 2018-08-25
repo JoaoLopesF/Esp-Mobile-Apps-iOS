@@ -93,7 +93,9 @@ class MainMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // Menu options
         
-        if AppSettings.ESP32_INFORMATIONS { // App have a Esp32 Informations enabled (debug) ?
+        // App have a Esp32 Informations enabled (debug) ?
+        
+        if AppSettings.ESP32_INFORMATIONS {
             
             self.mainMenuOptions.append(MenuOption(code: "INFO",
                                                    name: "Informations",
@@ -102,7 +104,9 @@ class MainMenuViewController: UIViewController, UITableViewDataSource, UITableVi
                                                    enabled: true))
         }
         
-        if AppSettings.TERMINAL_BLE { // App have a Terminal BLE enabled (debug) ?
+        // App have a Terminal BLE enabled (debug) ?
+        
+        if AppSettings.TERMINAL_BLE {
             
             self.mainMenuOptions.append(MenuOption(code: "TERMINAL",
                                                    name: "Terminal BLE",
@@ -110,6 +114,8 @@ class MainMenuViewController: UIViewController, UITableViewDataSource, UITableVi
                                                    image: "terminal",
                                                    enabled: true))
         }
+
+        // AppSettings - remove it if you not need this
 
         self.mainMenuOptions.append(MenuOption(code: "SETTINGS",
                                                name: "Settings",
