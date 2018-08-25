@@ -1054,7 +1054,7 @@ func showVCDisconnected (message: String) {
         
 #if !targetEnvironment(simulator) // Real device
         
-        let message = "Finded: \(name)"
+        let message = "Found: \(name)"
         
         // On connecting VC ?
             
